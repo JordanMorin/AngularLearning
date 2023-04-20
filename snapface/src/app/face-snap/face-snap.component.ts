@@ -11,6 +11,7 @@ export class FaceSnapComponent {
     id!: number;
     creationDate!: Date;
     snaps!: number;
+    imageUrl!: string;
 
     ngOnInit() {
         this.title = "Le titre est fou";
@@ -18,5 +19,6 @@ export class FaceSnapComponent {
         this.id = 16;
         this.creationDate = new Date();
         this.snaps = 6;
+        this.imageUrl = 'https://picsum.photos/200/200?blur=2';
     }
 }
