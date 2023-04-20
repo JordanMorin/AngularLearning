@@ -21,4 +21,7 @@ export class FaceSnapComponent {
         this.snaps = 6;
         this.imageUrl = 'https://picsum.photos/200/200?blur=2';
     }
+    onAddSnap() {
+        this.snaps++;
+    }
 }

@@ -2,3 +2,7 @@
 <p>Mis en ligne le {{ creationDate }}</p>
 <p>{{ description }}</p>
 <img [src]="imageUrl" [alt]="title">
+<p>
+    <button (click)="onAddSnap()">Oh Snap!</button>
+    🤌 {{ snaps }}
+</p>
