@@ -12,6 +12,8 @@ export class FaceSnapComponent {
     creationDate!: Date;
     snaps!: number;
     imageUrl!: string;
+    canLike!: boolean;
+    btnText!: string;
 
     ngOnInit() {
         this.title = "Le titre est fou";
@@ -20,8 +22,19 @@ export class FaceSnapComponent {
         this.creationDate = new Date();
         this.snaps = 6;
         this.imageUrl = 'https://picsum.photos/200/200?blur=2';
+        this.canLike = true;
+        this.btnText = "Snap !";
     }
     onAddSnap() {
-        this.snaps++;
+        if (this.canLike) {
+            this.snaps++;
+            this.canLike = false;
+            this.btnText = "Unsnap !";
+        }
+        else {
+            this.snaps--;
+            this.canLike = true;
+            this.btnText = "Snap !";
+        }
     }
 }
