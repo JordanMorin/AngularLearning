@@ -11,37 +11,33 @@ export class AppComponent implements OnInit {
     myOtherSnap!: FaceSnap;
     myThirdSnap!: FaceSnap;
 
+    lesSnaps!: FaceSnap[];
+
     ngOnInit() {
-        let id = 1;
-        this.mySnap = {
-            id: id,
-            title: 'Archibald',
-            description: 'Mon meilleur ami depuis tout petit !',
-            imageUrl: 'https://picsum.photos/id/' + id + '/200/100',
-            createdDate: new Date(),
-            snaps: 0,
-            location: 'Toulouse'
-        };
-
-        id = 2;
-        this.myOtherSnap = {
-            id: id,
-            title: 'Three Rock Mountain',
-            description: 'Un endroit magnifique pour les randonnées.',
-            imageUrl: 'https://picsum.photos/id/' + id + '/200/100',
-            createdDate: new Date(),
-            snaps: 0
-        };
-
-        id = 3;
-        this.myThirdSnap = {
-            id: id,
-            title: 'Un bon repas',
-            description: 'Mmmh que c\'est bon !',
-            imageUrl: 'https://picsum.photos/id/' + id + '/200/100',
-            createdDate: new Date(),
-            snaps: 0,
-            location: 'un endroit où je sais pas ou c\'est'
-        };
+        this.lesSnaps = [
+            {
+                id: 1,
+                title: 'Archibald',
+                description: 'Mon meilleur ami depuis tout petit !',
+                imageUrl: 'https://picsum.photos/id/' + 1 + '/200/100',
+                createdDate: new Date(),
+                snaps: 0,
+                location: 'Toulouse'
+            }, {
+                id: 2,
+                title: 'Three Rock Mountain',
+                description: 'Un endroit magnifique pour les randonnées.',
+                imageUrl: 'https://picsum.photos/id/' + 2 + '/200/100',
+                createdDate: new Date(),
+                snaps: 0
+            }, {
+                id: 3,
+                title: 'Un bon repas',
+                description: 'Mmmh que c\'est bon !',
+                imageUrl: 'https://picsum.photos/id/' + 3 + '/200/100',
+                createdDate: new Date(),
+                snaps: 0,
+                location: 'un endroit où je sais pas ou c\'est'
+            }]
     }
 }
