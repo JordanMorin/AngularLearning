@@ -20,7 +20,7 @@ export class AppComponent implements OnInit {
             imageUrl: 'https://picsum.photos/id/' + id + '/200/100',
             createdDate: new Date(),
             snaps: 0,
-            location: "Toulouse"
+            location: 'Toulouse'
         };
 
         id = 2;
@@ -41,7 +41,7 @@ export class AppComponent implements OnInit {
             imageUrl: 'https://picsum.photos/id/' + id + '/200/100',
             createdDate: new Date(),
             snaps: 0,
-            location: "Ici"
+            location: 'un endroit où je sais pas ou c\'est'
         };
     }
 }
