@@ -1,8 +1,8 @@
-<h2>[{{ id }}] - {{ title }}</h2>
-<p>Mis en ligne le {{ creationDate }}</p>
-<p>{{ description }}</p>
-<img [src]="imageUrl" [alt]="title">
+<h2>[{{ faceSnap.ID }}] - {{ faceSnap.title }}</h2>
+<p>Mis en ligne le {{ faceSnap.creationDate }}</p>
+<p>{{ faceSnap.description }}</p>
+<img [src]="faceSnap.imageUrl" [alt]="faceSnap.title">
 <p>
-    <button (click)="onAddSnap()">{{btnText}}</button>
+    <button (click)="onAddSnap()">{{faceSnap.btnText}}</button>
     🤌 {{ snaps }}
 </p>

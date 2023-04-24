@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+
+import { FaceSnap } from '../models/face-snap.model';
 
 @Component({
     selector: 'app-face-snap',
@@ -6,6 +8,7 @@ import { Component } from '@angular/core';
     styleUrls: ['./face-snap.component.scss']
 })
 export class FaceSnapComponent {
+    @Input() faceSnap!: FaceSnap;
     title!: string;
     description!: string;
     id!: number;
@@ -14,6 +17,7 @@ export class FaceSnapComponent {
     imageUrl!: string;
     canLike!: boolean;
     btnText!: string;
+
 
     ngOnInit() {
         this.title = "Le titre est fou";
@@ -26,15 +30,14 @@ export class FaceSnapComponent {
         this.btnText = "Snap !";
     }
     onAddSnap() {
-        if (this.canLike) {
-            this.snaps++;
-            this.canLike = false;
-            this.btnText = "Unsnap !";
+        if (this.btnText === 'Snap!') {
+            this.faceSnap.snaps--;
+            this.faceSnap.btnText = 'Oops, unSnap!';
         }
         else {
-            this.snaps--;
-            this.canLike = true;
-            this.btnText = "Snap !";
+            this.faceSnap.snaps++;
+            this.faceSnap.btnText = 'Snap!';
         }
     }
+
 }
