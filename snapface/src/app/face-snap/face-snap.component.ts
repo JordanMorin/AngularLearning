@@ -39,7 +39,7 @@ export class FaceSnapComponent implements OnInit {
         }
         else {
             this.faceSnap.snaps--;
-            this.btnText = 'Snap!';
+            this.btnText = 'Snap !';
         }
     }
 
