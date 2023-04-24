@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 import { FaceSnap } from '../models/face-snap.model';
 
@@ -7,7 +7,8 @@ import { FaceSnap } from '../models/face-snap.model';
     templateUrl: './face-snap.component.html',
     styleUrls: ['./face-snap.component.scss']
 })
-export class FaceSnapComponent {
+export class FaceSnapComponent implements OnInit {
+
     @Input() faceSnap!: FaceSnap;
     title!: string;
     description!: string;
@@ -29,14 +30,16 @@ export class FaceSnapComponent {
         this.canLike = true;
         this.btnText = "Snap !";
     }
+
+
     onAddSnap() {
         if (this.btnText === 'Snap!') {
             this.faceSnap.snaps--;
-            this.faceSnap.btnText = 'Oops, unSnap!';
+            this.btnText = 'Oops, unSnap!';
         }
         else {
             this.faceSnap.snaps++;
-            this.faceSnap.btnText = 'Snap!';
+            this.btnText = 'Snap!';
         }
     }
 
