@@ -4,7 +4,7 @@
 <img [src]="faceSnap.imageUrl" [alt]="faceSnap.title">
 <p>
     <button (click)="onAddSnap()">{{btnText}}</button>
-    🤌 {{ faceSnap.snaps }}
+    <span [ngStyle]="{ color: 'rgb(0, ' + faceSnap.snaps + ', 0)' }">🤌 {{ faceSnap.snaps }}</span>
 </p>
 <p *ngIf="faceSnap.location">Photo prise à {{ faceSnap.location }}</p>
 <p *ngIf="faceSnap.location === 'Toulouse'"> La villeuh Roseuh</p>
