@@ -1,10 +1,12 @@
-<h2>[{{ faceSnap.id }}] - {{ faceSnap.title }}</h2>
-<!-- <p>Mis en ligne le {{ faceSnap.creationDate }}</p> -->
-<p>{{ faceSnap.description }}</p>
-<img [src]="faceSnap.imageUrl" [alt]="faceSnap.title">
-<p>
-    <button (click)="onAddSnap()">{{btnText}}</button>
-    <span [ngStyle]="{ color: 'rgb(0, ' + faceSnap.snaps*10 + ', 0)' }">🤌 {{ faceSnap.snaps }}</span>
-</p>
-<p *ngIf="faceSnap.location">Photo prise à {{ faceSnap.location }}</p>
-<p *ngIf="faceSnap.location === 'Toulouse'"> La villeuh Roseuh</p>
+<div class="face-snap-card">
+    <h2>[{{ faceSnap.id }}] - {{ faceSnap.title }}</h2>
+    <!-- <p>Mis en ligne le {{ faceSnap.creationDate }}</p> -->
+    <p>{{ faceSnap.description }}</p>
+    <img [src]="faceSnap.imageUrl" [alt]="faceSnap.title">
+    <p>
+        <button (click)="onAddSnap()">{{btnText}}</button>
+        <span [ngStyle]="{ color: 'rgb(0, ' + faceSnap.snaps*10 + ', 0)' }">🤌 {{ faceSnap.snaps }}</span>
+    </p>
+    <p *ngIf="faceSnap.location">Photo prise à {{ faceSnap.location }}</p>
+    <p *ngIf="faceSnap.location === 'Toulouse'"> La villeuh Roseuh</p>
+</div>
