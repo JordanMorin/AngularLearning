@@ -9,5 +9,5 @@
     </p>
     <p *ngIf="faceSnap.location">Photo prise à {{ faceSnap.location }}</p>
     <p *ngIf="faceSnap.location === 'Toulouse'"> La villeuh Roseuh</p>
-    <p>il y a {{ 4346234.36 | number }} personnes qui ont vu cette photo</p>
+    <p>il y a {{ 4346234.36 | number: '1.0-0'}} personnes qui ont vu cette photo</p>
 </div>
