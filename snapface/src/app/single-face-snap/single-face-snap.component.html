@@ -1,0 +1,17 @@
+<div class="face-snap-card" [ngClass]="{ snapped: btnText === 'Oops, unSnap!'}">
+    <a routerLink="/facesnaps">Back</a>
+    <h2>[{{ faceSnap.id }}] - {{ faceSnap.title | titlecase }}</h2>
+    <p>Mis en ligne {{ faceSnap.createdDate | date: 'à HH:mm, le d MMMM yyyy' }}</p>
+    <p>{{ faceSnap.description }}</p>
+    <img [src]=" faceSnap.imageUrl" [alt]="faceSnap.title">
+    <p>
+        <button (click)="onAddSnap()">{{btnText}}</button>
+        <span [ngStyle]="{ color: 'rgb(0, ' + faceSnap.snaps*10 + ', 0)' }">🤌 {{ faceSnap.snaps }}</span>
+    </p>
+    <p *ngIf="faceSnap.location">Photo prise à {{ faceSnap.location }}</p>
+    <p *ngIf="faceSnap.location === 'Toulouse'"> La villeuh Roseuh</p>
+    <p>il y a {{ 4346234.36 | number: '1.0-1'}} personnes qui ont vu cette photo</p>
+    <p>Pourcentage de réussite de cette photo {{ 0.336 | percent }}</p>
+    <p>Prix : {{ 320.17 | currency }} / {{ 344.36 | currency: 'EUR' }} ( {{ 344.36 | currency: 'EUR' : 'code' }} )</p>
+</div>
+<p>DONE</p>

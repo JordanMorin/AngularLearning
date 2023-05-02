@@ -7,7 +7,7 @@
 
 
     img {
-        width: 30%;
+        width: 100%;
     }
 
     h2 {
@@ -19,6 +19,8 @@
         font-size: 16px;
     }
 }
+
+
 
 .snapped {
     background-color: rgba(lightgreen, 0.3);
@@ -35,4 +37,6 @@
             box-shadow: lightgreen 0 0 5px;
         }
     }
+
+
 }
