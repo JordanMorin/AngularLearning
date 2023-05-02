@@ -49,7 +49,7 @@ export class FaceSnapService {
     }
 
     //augmente de 1 le nombre de snaps du FaceSnap selectionné via son ID
-    snapFaceSnapById(faceSnapId: number, snapType: string): void {
+    snapFaceSnapById(faceSnapId: number, snapType: "+" | "-"): void {
         const monFaceSnap = this.getFaceSnapById(faceSnapId);
         snapType === '+' ? monFaceSnap.snaps++ : monFaceSnap.snaps--;
     }
