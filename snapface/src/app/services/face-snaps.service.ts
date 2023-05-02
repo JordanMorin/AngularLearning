@@ -38,25 +38,25 @@ export class FaceSnapService {
         return this.lesSnaps;
     }
 
-    //augmente de 1 le nombre de snaps du FaceSnap selectionné via son ID
-    snapFaceSnapById(faceSnapId: number): void {
-        const monFaceSnap = this.lesSnaps.find(faceSnap => faceSnap.id === faceSnapId);
-        if (monFaceSnap) {
-            monFaceSnap.snaps++;
+    getFaceSnapById(faceSnapId: number): FaceSnap {
+        const monFaceSnap = this.lesSnaps.find(monFaceSnap => monFaceSnap.id === faceSnapId);
+        if (!monFaceSnap) {
+            throw new Error('FaceSnap not found with this ID : ' + faceSnapId.toString());
         }
         else {
-            throw new Error('FaceSnap not found with this ID : ' + faceSnapId.toString())
+            return monFaceSnap;
         }
     }
 
     //augmente de 1 le nombre de snaps du FaceSnap selectionné via son ID
+    snapFaceSnapById(faceSnapId: number): void {
+        const monFaceSnap = this.getFaceSnapById(faceSnapId)
+        monFaceSnap.snaps++;
+    }
+
+    //diminue de 1 le nombre de snaps du FaceSnap selectionné via son ID
     unsnapFaceSnapById(faceSnapId: number): void {
-        const monFaceSnap = this.lesSnaps.find(faceSnap => faceSnap.id === faceSnapId);
-        if (monFaceSnap) {
-            monFaceSnap.snaps--;
-        }
-        else {
-            throw new Error('FaceSnap not found with this ID : ' + faceSnapId.toString())
-        }
+        const monFaceSnap = this.getFaceSnapById(faceSnapId)
+        monFaceSnap.snaps--;
     }
 }
