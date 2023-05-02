@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FaceSnap } from 'src/app/models/face-snap.model';
+import { FaceSnapService } from 'src/app/services/face-snaps.service';
 
 @Component({
     selector: 'app-face-snap-list',
@@ -10,8 +11,10 @@ export class FaceSnapListComponent {
 
     lesSnaps!: FaceSnap[];
 
-    ngOnInit() {
+    constructor(private FaceSnapService: FaceSnapService) { }
 
+    ngOnInit() {
+        this.lesSnaps = this.FaceSnapService.lesSnaps;
     }
 
 }
