@@ -9,7 +9,7 @@ import { FaceSnapService } from 'src/app/services/face-snaps.service';
 })
 export class FaceSnapListComponent {
 
-    lesSnaps!: FaceSnap[];
+    public lesSnaps!: FaceSnap[];
 
     constructor(private FaceSnapService: FaceSnapService) { }
 

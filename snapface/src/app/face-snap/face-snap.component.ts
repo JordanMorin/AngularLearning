@@ -12,7 +12,7 @@ import { FaceSnap } from '../models/face-snap.model';
 export class FaceSnapComponent implements OnInit {
 
     @Input() faceSnap!: FaceSnap;
-    btnText!: string;
+    public btnText!: string;
 
     constructor(private FaceSnapsService: FaceSnapService, private router: Router) { }
 

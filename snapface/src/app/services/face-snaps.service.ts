@@ -7,7 +7,7 @@ import { FaceSnap } from 'src/app/models/face-snap.model';
 
 export class FaceSnapService {
 
-    lesSnaps: FaceSnap[] = [
+    public lesSnaps: FaceSnap[] = [
         {
             id: 1,
             title: 'Archibald',
