@@ -13,7 +13,7 @@ export class LandingPageComponent {
 
     }
 
-    onContinue(): void {
+    public onContinue(): void {
         this.router.navigateByUrl('facesnaps');
 
     }

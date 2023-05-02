@@ -11,17 +11,17 @@ import { FaceSnap } from '../models/face-snap.model';
 })
 export class FaceSnapComponent implements OnInit {
 
-    @Input() faceSnap!: FaceSnap;
+    @Input() public faceSnap!: FaceSnap;
     public btnText!: string;
 
     constructor(private FaceSnapsService: FaceSnapService, private router: Router) { }
 
-    ngOnInit() {
+    public ngOnInit(): void {
         this.btnText = "Snap !";
     }
 
 
-    onAddSnap() {
+    public onAddSnap() {
         if (this.btnText === 'Snap !') {
             this.FaceSnapsService.snapFaceSnapById(this.faceSnap.id, "+")
             this.btnText = 'Oops, unSnap!';
@@ -32,7 +32,7 @@ export class FaceSnapComponent implements OnInit {
         }
     }
 
-    onViewFaceSnap() {
+    public onViewFaceSnap() {
         this.router.navigateByUrl(`facesnaps/${ this.faceSnap.id }`);
     }
 

@@ -7,7 +7,7 @@ import { FaceSnap } from 'src/app/models/face-snap.model';
 
 export class FaceSnapService {
 
-    public lesSnaps: FaceSnap[] = [
+    private lesSnaps: FaceSnap[] = [
         {
             id: 1,
             title: 'Archibald',
@@ -34,11 +34,11 @@ export class FaceSnapService {
         }];
 
     //retourne la liste de nos faceSnaps
-    getAllFaceSnaps(): FaceSnap[] {
+    public getAllFaceSnaps(): FaceSnap[] {
         return this.lesSnaps;
     }
 
-    getFaceSnapById(faceSnapId: number): FaceSnap {
+    public getFaceSnapById(faceSnapId: number): FaceSnap {
         const monFaceSnap = this.lesSnaps.find(monFaceSnap => monFaceSnap.id === faceSnapId);
         if (!monFaceSnap) {
             throw new Error('FaceSnap not found with this ID : ' + faceSnapId.toString());
@@ -49,7 +49,7 @@ export class FaceSnapService {
     }
 
     //augmente de 1 le nombre de snaps du FaceSnap selectionné via son ID
-    snapFaceSnapById(faceSnapId: number, snapType: "+" | "-"): void {
+    public snapFaceSnapById(faceSnapId: number, snapType: "+" | "-"): void {
         const monFaceSnap = this.getFaceSnapById(faceSnapId);
         snapType === '+' ? monFaceSnap.snaps++ : monFaceSnap.snaps--;
     }
