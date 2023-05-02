@@ -1,1 +1,1 @@
-git pull https://github.com/MythMega/angularlearning.git
+git pull https://github.com/JordanMorin/angularlearning.git
