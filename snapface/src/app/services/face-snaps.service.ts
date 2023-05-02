@@ -33,9 +33,30 @@ export class FaceSnapService {
             location: 'un endroit où je sais pas ou c\'est'
         }];
 
-
+    //retourne la liste de nos faceSnaps
     getAllFaceSnaps(): FaceSnap[] {
         return this.lesSnaps;
     }
 
+    //augmente de 1 le nombre de snaps du FaceSnap selectionné via son ID
+    snapFaceSnapById(faceSnapId: number): void {
+        const monFaceSnap = this.lesSnaps.find(faceSnap => faceSnap.id === faceSnapId);
+        if (monFaceSnap) {
+            monFaceSnap.snaps++;
+        }
+        else {
+            throw new Error('FaceSnap not found with this ID : ' + faceSnapId.toString())
+        }
+    }
+
+    //augmente de 1 le nombre de snaps du FaceSnap selectionné via son ID
+    unsnapFaceSnapById(faceSnapId: number): void {
+        const monFaceSnap = this.lesSnaps.find(faceSnap => faceSnap.id === faceSnapId);
+        if (monFaceSnap) {
+            monFaceSnap.snaps--;
+        }
+        else {
+            throw new Error('FaceSnap not found with this ID : ' + faceSnapId.toString())
+        }
+    }
 }

@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { FaceSnapService } from 'src/app/services/face-snaps.service';
 
 import { FaceSnap } from '../models/face-snap.model';
 
@@ -10,35 +11,22 @@ import { FaceSnap } from '../models/face-snap.model';
 export class FaceSnapComponent implements OnInit {
 
     @Input() faceSnap!: FaceSnap;
-    title!: string;
-    description!: string;
-    id!: number;
-    creationDate!: Date;
-    snaps!: number;
-    imageUrl!: string;
-    canLike!: boolean;
     btnText!: string;
 
+    constructor(private FaceSnapsService: FaceSnapService) { }
 
     ngOnInit() {
-        this.title = "Le titre est fou";
-        this.description = "mais la description est encore plus folle";
-        this.id = 16;
-        this.creationDate = new Date();
-        this.snaps = 6;
-        this.imageUrl = 'https://picsum.photos/200/200?blur=2';
-        this.canLike = true;
         this.btnText = "Snap !";
     }
 
 
     onAddSnap() {
         if (this.btnText === 'Snap !') {
-            this.faceSnap.snaps++;
+            this.FaceSnapsService.snapFaceSnapById(this.faceSnap.id)
             this.btnText = 'Oops, unSnap!';
         }
         else {
-            this.faceSnap.snaps--;
+            this.FaceSnapsService.unsnapFaceSnapById(this.faceSnap.id)
             this.btnText = 'Snap !';
         }
     }
