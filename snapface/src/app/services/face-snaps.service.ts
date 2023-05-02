@@ -31,6 +31,11 @@ export class FaceSnapService {
             createdDate: new Date(),
             snaps: 21,
             location: 'un endroit où je sais pas ou c\'est'
-        }]
+        }];
+
+
+    getAllFaceSnaps(): FaceSnap[] {
+        return this.lesSnaps;
+    }
 
 }
