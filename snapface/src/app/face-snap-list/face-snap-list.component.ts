@@ -11,10 +11,14 @@ export class FaceSnapListComponent {
 
     public lesSnaps!: FaceSnap[];
 
-    constructor(private FaceSnapService: FaceSnapService) { }
+    constructor(private faceSnapService: FaceSnapService) { }
 
     ngOnInit() {
-        this.lesSnaps = this.FaceSnapService.getAllFaceSnaps();
+        this.lesSnaps = this.faceSnapService.getAllFaceSnaps();
+    }
+
+    getAllSnaps(): FaceSnap[] {
+        return this.faceSnapService.getAllFaceSnaps();
     }
 
 }
