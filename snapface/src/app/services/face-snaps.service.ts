@@ -49,14 +49,8 @@ export class FaceSnapService {
     }
 
     //augmente de 1 le nombre de snaps du FaceSnap selectionné via son ID
-    snapFaceSnapById(faceSnapId: number): void {
-        const monFaceSnap = this.getFaceSnapById(faceSnapId)
-        monFaceSnap.snaps++;
-    }
-
-    //diminue de 1 le nombre de snaps du FaceSnap selectionné via son ID
-    unsnapFaceSnapById(faceSnapId: number): void {
-        const monFaceSnap = this.getFaceSnapById(faceSnapId)
-        monFaceSnap.snaps--;
+    snapFaceSnapById(faceSnapId: number, snapType: string): void {
+        const monFaceSnap = this.getFaceSnapById(faceSnapId);
+        snapType === '+' ? monFaceSnap.snaps++ : monFaceSnap.snaps--;
     }
 }
