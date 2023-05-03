@@ -10,6 +10,7 @@ import { FaceSnapService } from 'src/app/services/face-snaps.service';
 export class FaceSnapListComponent {
 
     public lesSnaps!: FaceSnap[];
+    public reactions: string[] = [];
 
     constructor(public faceSnapService: FaceSnapService) { }
 
@@ -17,8 +18,9 @@ export class FaceSnapListComponent {
         return this.faceSnapService.getAllFaceSnaps();
     }
 
-    public logOutput(info: Event): void {
-        console.log(info)
+    public logOutput(info: string): void {
+        //console.log(info);
+        this.reactions.push(info);
     }
 
 }

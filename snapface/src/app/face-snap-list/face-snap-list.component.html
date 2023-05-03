@@ -1,2 +1,5 @@
 <app-face-snap *ngFor="let faceSnapElementInArray of this.faceSnapService.getAllFaceSnaps()" [faceSnap]="faceSnapElementInArray" (newItemEvent)="logOutput($event)">
 </app-face-snap>
+<ul>
+    <li *ngFor="let item of reactions">{{item}}</li>
+</ul>
