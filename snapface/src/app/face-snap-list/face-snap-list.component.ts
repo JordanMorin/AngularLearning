@@ -20,4 +20,8 @@ export class FaceSnapListComponent {
         return this.faceSnapService.getAllFaceSnaps();
     }
 
+    public logOutput(info: Event) {
+        console.log(info)
+    }
+
 }

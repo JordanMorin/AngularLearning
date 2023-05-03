@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { FaceSnapService } from 'src/app/services/face-snaps.service';
 
@@ -14,6 +14,8 @@ export class SingleFaceSnapComponent implements OnInit {
     faceSnap!: FaceSnap;
     btnText!: string;
 
+    @Output() newItemEvent = new EventEmitter<string>();
+
     constructor(private FaceSnapsService: FaceSnapService, private route: ActivatedRoute) { }
 
     ngOnInit() {
@@ -26,6 +28,7 @@ export class SingleFaceSnapComponent implements OnInit {
 
 
     onAddSnap() {
+        let stringOutput: string = `${ this.faceSnap.id } `;
         if (this.btnText === 'Snap !') {
             this.FaceSnapsService.snapFaceSnapById(this.faceSnap.id, "+")
             this.btnText = 'Oops, unSnap!';
@@ -34,6 +37,7 @@ export class SingleFaceSnapComponent implements OnInit {
             this.FaceSnapsService.snapFaceSnapById(this.faceSnap.id, "-")
             this.btnText = 'Snap !';
         }
+        this.newItemEvent.emit(stringOutput)
     }
 
 }
