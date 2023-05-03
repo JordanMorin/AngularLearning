@@ -5,7 +5,7 @@ import { FaceSnapService } from 'src/app/services/face-snaps.service';
 @Component({
     selector: 'app-face-snap-list',
     templateUrl: './face-snap-list.component.html',
-    styleUrls: ['./face-snap-list.component.scss']
+    styleUrls: ['./face-snap-list.component.scss'],
 })
 export class FaceSnapListComponent {
 
@@ -13,14 +13,11 @@ export class FaceSnapListComponent {
 
     constructor(public faceSnapService: FaceSnapService) { }
 
-    ngOnInit(): void {
-    }
-
     public getAllSnaps(): FaceSnap[] {
         return this.faceSnapService.getAllFaceSnaps();
     }
 
-    public logOutput(info: Event) {
+    public logOutput(info: Event): void {
         console.log(info)
     }
 
