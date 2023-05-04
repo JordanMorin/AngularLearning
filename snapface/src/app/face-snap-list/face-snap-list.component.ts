@@ -9,13 +9,13 @@ import { FaceSnapService } from 'src/app/services/face-snaps.service';
 })
 export class FaceSnapListComponent {
 
-    public lesSnaps!: FaceSnap[];
+    public lesSnaps: FaceSnap[] = this.faceSnapService.getAllFaceSnaps();
     public reactions: string[] = [];
 
     constructor(public faceSnapService: FaceSnapService) { }
 
     public getAllSnaps(): FaceSnap[] {
-        return this.faceSnapService.getAllFaceSnaps();
+        return this.lesSnaps;
     }
 
     public logOutput(info: string): void {
