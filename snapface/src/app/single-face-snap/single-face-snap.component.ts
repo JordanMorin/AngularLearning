@@ -26,11 +26,11 @@ export class SingleFaceSnapComponent implements OnInit {
 
     public onAddSnap(): void {
         if (this.btnText === 'Snap !') {
-            this.FaceSnapsService.snapFaceSnapById(this.faceSnap.id, "+")
+            this.faceSnap.snaps++;
             this.btnText = 'Oops, unSnap!';
         }
         else {
-            this.FaceSnapsService.snapFaceSnapById(this.faceSnap.id, "-")
+            this.faceSnap.snaps--;
             this.btnText = 'Snap !';
         }
     }
