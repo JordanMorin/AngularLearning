@@ -6,5 +6,5 @@ export class FaceSnap {
     public createdDate!: Date;
     public snaps!: number;
     public location?: string;
-    public views?: number;
+    public views: number = 0;
 }
