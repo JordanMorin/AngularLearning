@@ -1,4 +1,4 @@
-<div class="face-snap-card" [ngClass]="{ snapped: btnText === 'Oops, unSnap!'}">
+<div class="face-snap-card" [ngClass]="{ snapped: btnText === 'Oops, unSnap!', unsnapped: btnText === 'Snap !'}">
     <h2>[{{ faceSnap.id }}] - {{ faceSnap.title | titlecase }}</h2>
     <br>
     <img [src]=" faceSnap.imageUrl" [alt]="faceSnap.title">

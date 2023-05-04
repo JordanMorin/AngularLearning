@@ -37,6 +37,23 @@
     }
 }
 
+.unsnapped {
+    background-color: rgba(rgb(255, 255, 255), 0.3);
+    color: rgb(0, 0, 0);
+    -webkit-transition: background-color 200ms linear;
+    -ms-transition: background-color 200ms linear;
+    transition: background-color 200ms linear;
+
+    button {
+        box-shadow: rgba(0, 0, 0, 0.1) 3px 3px 7px;
+        color: rgb(0, 0, 0);
+
+        &:active {
+            box-shadow: rgb(0, 0, 0) 0 0 5px;
+        }
+    }
+}
+
 .viewBtn {
     width: 30%;
 }
