@@ -16,7 +16,7 @@ export class SingleFaceSnapComponent implements OnInit {
 
     constructor(private FaceSnapsService: FaceSnapService, private route: ActivatedRoute) { }
 
-    public ngOnInit() {
+    public ngOnInit(): void {
         this.btnText = "Snap !";
         // mettre + devant un string le cast en number
         const faceSnapId = +this.route.snapshot.params['id'];
@@ -24,7 +24,7 @@ export class SingleFaceSnapComponent implements OnInit {
 
     }
 
-    public onAddSnap() {
+    public onAddSnap(): void {
         if (this.btnText === 'Snap !') {
             this.FaceSnapsService.snapFaceSnapById(this.faceSnap.id, "+")
             this.btnText = 'Oops, unSnap!';
