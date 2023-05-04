@@ -10,6 +10,9 @@
             <br>
             <button (click)="onViewFaceSnap()" class="viewBtn">VIEW</button>
             <br>
+            <p>{{faceSnap.description}}</p>
+            <br>
+            <p>Nombre de vue(s) : {{faceSnap.views}}</p>
             <p>
                 <button (click)="onAddSnap()">{{btnText}}</button>
                 <span [ngStyle]="{ color: 'rgb(0, ' + faceSnap.snaps*10 + ', 0)' }">🤌 {{ faceSnap.snaps }}</span>
@@ -23,9 +26,11 @@
         </div>
         <div>
             <!-- partie droite -->
-            <app-text-input [modelValue]="faceSnap.description" (newItemEvent)="onEditedTextArea($event)">
-            </app-text-input><br>
-            {{faceSnap.description}}
+            <app-text-input [(modelValue)]="faceSnap.description">
+            </app-text-input><br><br>
+            <app-number-input [(modelValue)]="faceSnap.views">
+            </app-number-input><br>
+
         </div>
     </div>
 </div>

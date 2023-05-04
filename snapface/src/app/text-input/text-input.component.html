@@ -1,2 +1,3 @@
 <!-- <textarea rows="10" cols="50" value="[ngModel]='modelValue'" (change)="onEdit(modelValue)"></textarea> -->
-<input type="text" [ngModel]="modelValue" (change)="onEdit($event)">
+<label for="editDesc">Edit description : </label>
+<input type="text" [ngModel]="modelValue" (change)="onEdit($event)" id="editDesc" name="editDesc">

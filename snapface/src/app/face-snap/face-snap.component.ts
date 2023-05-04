@@ -10,7 +10,7 @@ import { FaceSnap } from 'src/app/models/face-snap.model';
 export class FaceSnapComponent implements OnInit {
 
     @Input() public faceSnap!: FaceSnap;
-    @Output() private newItemEvent = new EventEmitter<string>();
+    @Output() public newItemEvent = new EventEmitter<string>();
     public btnText!: string;
 
     constructor(private router: Router) { }
@@ -39,9 +39,4 @@ export class FaceSnapComponent implements OnInit {
             this.btnText = 'Snap !';
         }
     }
-
-    public onEditedTextArea(changedDesc: string): void {
-        this.faceSnap.description = changedDesc;
-    }
-
 }

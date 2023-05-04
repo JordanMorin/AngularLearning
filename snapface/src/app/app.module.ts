@@ -12,6 +12,7 @@ import { HeaderComponent } from './header/header.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { SingleFaceSnapComponent } from './single-face-snap/single-face-snap.component';
 import { TextInputComponent } from './text-input/text-input.component';
+import { NumberInputComponent } from './number-input/number-input.component';
 
 @NgModule({
     declarations: [
@@ -22,6 +23,7 @@ import { TextInputComponent } from './text-input/text-input.component';
         LandingPageComponent,
         SingleFaceSnapComponent,
         TextInputComponent,
+        NumberInputComponent,
     ],
     imports: [
         BrowserModule,

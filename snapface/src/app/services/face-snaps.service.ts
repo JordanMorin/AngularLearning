@@ -16,6 +16,7 @@ export class FaceSnapService {
             createdDate: new Date(),
             snaps: 14,
             location: 'Toulouse',
+            views: 17,
         }, {
             id: 2,
             title: 'Three Rock Mountain',
@@ -23,6 +24,7 @@ export class FaceSnapService {
             imageUrl: 'https://picsum.photos/id/' + 2 + '/200/100',
             createdDate: new Date(),
             snaps: 1,
+            views: 1354,
         }, {
             id: 3,
             title: 'Un bon repas',
@@ -31,6 +33,7 @@ export class FaceSnapService {
             createdDate: new Date(),
             snaps: 21,
             location: 'un endroit où je sais pas ou c\'est',
+            views: 2,
         }];
 
     //retourne la liste de nos faceSnaps
