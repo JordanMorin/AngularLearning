@@ -1,7 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { FaceSnap } from 'src/app/models/face-snap.model';
-import { FaceSnapService } from 'src/app/services/face-snaps.service';
 
 @Component({
     selector: 'app-face-snap',
@@ -14,7 +13,7 @@ export class FaceSnapComponent implements OnInit {
     @Output() private newItemEvent = new EventEmitter<string>();
     public btnText!: string;
 
-    constructor(private FaceSnapsService: FaceSnapService, private router: Router) { }
+    constructor(private router: Router) { }
 
     public ngOnInit(): void {
         this.btnText = "Snap !";
