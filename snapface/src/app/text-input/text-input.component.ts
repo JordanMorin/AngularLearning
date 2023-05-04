@@ -6,6 +6,13 @@ import { Component, Input } from '@angular/core';
     styleUrls: ['./text-input.component.scss'],
 })
 export class TextInputComponent {
-    @Input() modelValue: string = "";
+    @Input() public modelValue: string = "";
 
+    public editText(str: string): void {
+        this.modelValue = str;
+    }
+
+    public getText(): string {
+        return this.modelValue;
+    }
 }
