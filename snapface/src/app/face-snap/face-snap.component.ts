@@ -40,4 +40,8 @@ export class FaceSnapComponent implements OnInit {
         }
     }
 
+    public onEditedTextArea(changedDesc: string): void {
+        this.faceSnap.description = changedDesc;
+    }
+
 }

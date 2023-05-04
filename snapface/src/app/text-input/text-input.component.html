@@ -1,1 +1,2 @@
-<textarea rows="10" cols="50">{{getText()}}</textarea>
+<!-- <textarea rows="10" cols="50" value="[ngModel]='modelValue'" (change)="onEdit(modelValue)"></textarea> -->
+<input type="text" [ngModel]="modelValue" (change)="onEdit($event)">
