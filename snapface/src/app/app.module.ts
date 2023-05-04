@@ -10,6 +10,7 @@ import { FaceSnapComponent } from './face-snap/face-snap.component';
 import { HeaderComponent } from './header/header.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { SingleFaceSnapComponent } from './single-face-snap/single-face-snap.component';
+import { TextInputComponent } from './text-input/text-input.component';
 
 @NgModule({
     declarations: [
@@ -19,6 +20,7 @@ import { SingleFaceSnapComponent } from './single-face-snap/single-face-snap.com
         HeaderComponent,
         LandingPageComponent,
         SingleFaceSnapComponent,
+        TextInputComponent,
     ],
     imports: [
         BrowserModule,
