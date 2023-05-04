@@ -1,19 +1,27 @@
 <div class="face-snap-card" [ngClass]="{ snapped: btnText === 'Oops, unSnap!', unsnapped: btnText === 'Snap !'}">
-    <h2>[{{ faceSnap.id }}] - {{ faceSnap.title | titlecase }}</h2>
-    <br>
-    <img [src]=" faceSnap.imageUrl" [alt]="faceSnap.title">
-    <br>
-    <br>
-    <button (click)="onViewFaceSnap()" class="viewBtn">VIEW</button>
-    <br>
-    <p>
-        <button (click)="onAddSnap()">{{btnText}}</button>
-        <span [ngStyle]="{ color: 'rgb(0, ' + faceSnap.snaps*10 + ', 0)' }">🤌 {{ faceSnap.snaps }}</span>
-    </p>
-    <br>
-    <button (click)="onReact('cool')">Cool</button>
-    <button (click)="onReact('bof')">Bof-Bof</button>
-    <button (click)="onReact('intéressant')">Intéressant !</button>
-    <button (click)="onReact('Merci')">Merci bien !</button>
-    <br>
+    <div class="wrapper">
+        <div>
+            <!-- partie gauche -->
+            <h2>[{{ faceSnap.id }}] - {{ faceSnap.title | titlecase }}</h2>
+            <br>
+            <img [src]=" faceSnap.imageUrl" [alt]="faceSnap.title">
+            <br>
+            <br>
+            <button (click)="onViewFaceSnap()" class="viewBtn">VIEW</button>
+            <br>
+            <p>
+                <button (click)="onAddSnap()">{{btnText}}</button>
+                <span [ngStyle]="{ color: 'rgb(0, ' + faceSnap.snaps*10 + ', 0)' }">🤌 {{ faceSnap.snaps }}</span>
+            </p>
+            <br>
+            <button (click)="onReact('cool')">Cool</button>
+            <button (click)="onReact('bof')">Bof-Bof</button>
+            <button (click)="onReact('intéressant')">Intéressant !</button>
+            <button (click)="onReact('Merci')">Merci bien !</button>
+            <br>
+        </div>
+        <div>
+            <!-- partie droite -->
+        </div>
+    </div>
 </div>
