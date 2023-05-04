@@ -21,6 +21,7 @@ export class SingleFaceSnapComponent implements OnInit {
         // mettre + devant un string le cast en number
         const faceSnapId = +this.route.snapshot.params['id'];
         this.faceSnap = this.FaceSnapsService.getFaceSnapById(faceSnapId);
+        this.faceSnap.views++;
 
     }
 
