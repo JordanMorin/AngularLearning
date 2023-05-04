@@ -11,24 +11,13 @@ import { FaceSnapService } from 'src/app/services/face-snaps.service';
 export class FaceSnapComponent implements OnInit {
 
     @Input() public faceSnap!: FaceSnap;
-    @Output() newItemEvent = new EventEmitter<string>();
+    @Output() private newItemEvent = new EventEmitter<string>();
     public btnText!: string;
 
     constructor(private FaceSnapsService: FaceSnapService, private router: Router) { }
 
     public ngOnInit(): void {
         this.btnText = "Snap !";
-    }
-
-    public onAddSnap(): void {
-        if (this.btnText === 'Snap !') {
-            this.FaceSnapsService.snapFaceSnapById(this.faceSnap.id, "+")
-            this.btnText = 'Oops, unSnap!';
-        }
-        else {
-            this.FaceSnapsService.snapFaceSnapById(this.faceSnap.id, "-")
-            this.btnText = 'Snap !';
-        }
     }
 
     public onViewFaceSnap(): void {
