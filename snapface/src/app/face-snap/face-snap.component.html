@@ -6,6 +6,10 @@
     <br>
     <button (click)="onViewFaceSnap()" class="viewBtn">VIEW</button>
     <br>
+    <p>
+        <button (click)="onAddSnap()">{{btnText}}</button>
+        <span [ngStyle]="{ color: 'rgb(0, ' + faceSnap.snaps*10 + ', 0)' }">🤌 {{ faceSnap.snaps }}</span>
+    </p>
     <br>
     <button (click)="onReact('cool')">Cool</button>
     <button (click)="onReact('bof')">Bof-Bof</button>

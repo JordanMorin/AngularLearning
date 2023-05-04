@@ -29,4 +29,15 @@ export class FaceSnapComponent implements OnInit {
         this.newItemEvent.emit(stringOutput)
     }
 
+    public onAddSnap(): void {
+        if (this.btnText === 'Snap !') {
+            this.faceSnap.snaps++;
+            this.btnText = 'Oops, unSnap!';
+        }
+        else {
+            this.faceSnap.snaps--;
+            this.btnText = 'Snap !';
+        }
+    }
+
 }
