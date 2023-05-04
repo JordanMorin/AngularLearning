@@ -7,7 +7,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 })
 export class TextInputComponent {
     @Input() public modelValue: string = "";
-    @Output() private newItemEvent = new EventEmitter<string>();
+    @Output() public modelValueChange = new EventEmitter<string>();
 
     public editText(str: string): void {
         this.modelValue = str;
@@ -15,7 +15,7 @@ export class TextInputComponent {
 
     public onEdit(monEvent: any): void {
         this.modelValue = monEvent.target.value;
-        this.newItemEvent.emit(this.modelValue);
+        this.modelValueChange.emit(this.modelValue);
         console.log(monEvent);
         console.log(monEvent.target.value);
     }
