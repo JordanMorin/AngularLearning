@@ -18,14 +18,14 @@ import { SingleFaceSnapComponent } from './single-face-snap/single-face-snap.com
         FaceSnapListComponent,
         HeaderComponent,
         LandingPageComponent,
-        SingleFaceSnapComponent
+        SingleFaceSnapComponent,
     ],
     imports: [
         BrowserModule,
-        AppRoutingModule
+        AppRoutingModule,
     ],
     providers: [{ provide: LOCALE_ID, useValue: 'fr-FR' }],
-    bootstrap: [AppComponent]
+    bootstrap: [AppComponent],
 })
 export class AppModule {
     constructor() {

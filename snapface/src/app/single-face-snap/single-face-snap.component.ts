@@ -7,7 +7,7 @@ import { FaceSnap } from '../models/face-snap.model';
 @Component({
     selector: 'single-face-snap',
     templateUrl: './single-face-snap.component.html',
-    styleUrls: ['./single-face-snap.component.scss']
+    styleUrls: ['./single-face-snap.component.scss'],
 })
 export class SingleFaceSnapComponent implements OnInit {
 
@@ -25,7 +25,6 @@ export class SingleFaceSnapComponent implements OnInit {
         this.faceSnap = this.FaceSnapsService.getFaceSnapById(faceSnapId);
 
     }
-
 
     onAddSnap() {
         let stringOutput: string = `${ this.faceSnap.id } `;

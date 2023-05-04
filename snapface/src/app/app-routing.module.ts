@@ -4,7 +4,6 @@ import { FaceSnapListComponent } from 'src/app/face-snap-list/face-snap-list.com
 import { LandingPageComponent } from 'src/app/landing-page/landing-page.component';
 import { SingleFaceSnapComponent } from 'src/app/single-face-snap/single-face-snap.component';
 
-
 const routes: Routes = [
     { path: 'facesnaps', component: FaceSnapListComponent },
     { path: 'facesnaps/:id', component: SingleFaceSnapComponent },
@@ -13,7 +12,7 @@ const routes: Routes = [
 
 @NgModule({
     imports: [RouterModule.forRoot(routes)],
-    exports: [RouterModule]
+    exports: [RouterModule],
 })
 export class AppRoutingModule {
 
