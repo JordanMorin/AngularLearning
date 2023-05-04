@@ -38,6 +38,20 @@
                 "@angular-eslint/no-inputs-metadata-property": 0,
                 "@angular-eslint/no-outputs-metadata-property": 0,
                 "@angular-eslint/no-output-native": 0,
+                "@typescript-eslint/explicit-member-accessibility": [
+                    "error",
+                    {
+                        "accessibility": "explicit",
+                        "overrides": {
+                            "accessors": "explicit",
+                            "constructors": "no-public",
+                            "methods": "explicit",
+                            "properties": "off",
+                            "parameterProperties": "explicit"
+                        }
+                    }
+                ],
+                "@typescript-eslint/explicit-function-return-type": "error",
                 "no-irregular-whitespace": "error",
                 "comma-dangle": [
                     "error",
