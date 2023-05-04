@@ -11,8 +11,8 @@ import { FaceSnap } from '../models/face-snap.model';
 })
 export class SingleFaceSnapComponent implements OnInit {
 
-    faceSnap!: FaceSnap;
-    btnText!: string;
+    public faceSnap!: FaceSnap;
+    public btnText!: string;
 
     constructor(private FaceSnapsService: FaceSnapService, private route: ActivatedRoute) { }
 
