@@ -13,9 +13,10 @@ export class TextInputComponent {
         this.modelValue = str;
     }
 
-    public onEdit(monEvent: Event): void {
+    public onEdit(monEvent: any): void {
         this.modelValue = monEvent.target.value;
         this.newItemEvent.emit(this.modelValue);
         console.log(monEvent);
+        console.log(monEvent.target.value);
     }
 }

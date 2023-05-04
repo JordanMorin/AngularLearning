@@ -23,7 +23,7 @@
         </div>
         <div>
             <!-- partie droite -->
-            <app-text-input [modelValue]="faceSnap.description">
+            <app-text-input [modelValue]="faceSnap.description" (newItemEvent)="onEditedTextArea($event)">
             </app-text-input><br>
             {{faceSnap.description}}
         </div>
