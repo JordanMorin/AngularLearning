@@ -26,9 +26,9 @@
         </div>
         <div>
             <!-- partie droite -->
-            <app-text-input [(modelValue)]="faceSnap.description">
+            <app-text-input [(modelValue)]="faceSnap.description" (modelValueChange)="onChanged()">
             </app-text-input><br><br>
-            <app-number-input [(modelValue)]="faceSnap.views">
+            <app-number-input [(modelValue)]="faceSnap.views" (modelValueChange)="onChanged()">
             </app-number-input><br>
 
         </div>

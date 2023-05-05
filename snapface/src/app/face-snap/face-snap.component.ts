@@ -11,6 +11,7 @@ export class FaceSnapComponent implements OnInit {
 
     @Input() public faceSnap!: FaceSnap;
     @Output() public newItemEvent = new EventEmitter<string>();
+    @Output() public eventComplexe = new EventEmitter<{ val1: string, val2: number }>();
     public btnText!: string;
 
     constructor(private router: Router) { }
@@ -20,12 +21,12 @@ export class FaceSnapComponent implements OnInit {
     }
 
     public onViewFaceSnap(): void {
-        this.router.navigateByUrl(`facesnaps/${ this.faceSnap.id }`);
+        this.router.navigateByUrl(`facesnaps/${this.faceSnap.id}`);
     }
 
     public onReact(reaction: string): void {
         //console.log(`${ this.faceSnap.title } a reçu la réaction ${ reaction }.`);
-        let stringOutput: string = `${ this.faceSnap.id } - ${ this.faceSnap.title } a reçu la réaction ${ reaction }.`;
+        let stringOutput: string = `${this.faceSnap.id} - ${this.faceSnap.title} a reçu la réaction ${reaction}.`;
         this.newItemEvent.emit(stringOutput)
     }
 
@@ -38,5 +39,9 @@ export class FaceSnapComponent implements OnInit {
             this.faceSnap.snaps--;
             this.btnText = 'Snap !';
         }
+    }
+
+    public onChanged(): void {
+        this.eventComplexe.emit({ val1: this.faceSnap.description, val2: this.faceSnap.views });
     }
 }
