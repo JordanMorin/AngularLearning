@@ -7,10 +7,12 @@ import { FaceSnap } from 'src/app/models/face-snap.model';
     templateUrl: './face-snap.component.html',
     styleUrls: ['./face-snap.component.scss'],
 })
+
 export class FaceSnapComponent implements OnInit {
 
     @Input() public faceSnap!: FaceSnap;
     @Output() public newItemEvent = new EventEmitter<string>();
+    @Output() public anotherNewItemEvent = new EventEmitter<{}>();
     public btnText!: string;
 
     constructor(private router: Router) { }
@@ -38,5 +40,18 @@ export class FaceSnapComponent implements OnInit {
             this.faceSnap.snaps--;
             this.btnText = 'Snap !';
         }
+    }
+
+    //executé à chaque update d'un enfant text-input ou number-input
+    public onUpdate(): void {
+        this.anotherNewItemEvent.emit(this.createDynamiqueObject())
+    }
+
+    private createDynamiqueObject(): any {
+        let myDynamicObject = {
+            valueInputText: this.faceSnap.description,
+            valueInputNumber: this.faceSnap.views,
+        };
+        return myDynamicObject;
     }
 }
