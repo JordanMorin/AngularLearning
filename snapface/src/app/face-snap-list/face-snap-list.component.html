@@ -1,6 +1,8 @@
 <app-face-snap *ngFor="let faceSnapElementInArray of this.faceSnapService.getAllFaceSnaps()" [faceSnap]="faceSnapElementInArray" (newItemEvent)="logOutput($event)" (anotherNewItemEvent)="logChangesOutput($event)">
     <!-- {{faceSnapElementInArray.description}} - {{faceSnapElementInArray.snaps}} -->
 </app-face-snap>
+
+<button (click)="onSave()">sauvegarder</button>
 <ul>
     <li *ngFor="let item of reactions">{{item}}</li>
 </ul>
