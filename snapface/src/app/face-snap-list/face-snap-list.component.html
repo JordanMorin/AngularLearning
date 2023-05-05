@@ -1,6 +1,18 @@
-<app-face-snap *ngFor="let faceSnapElementInArray of this.faceSnapService.getAllFaceSnaps()" [faceSnap]="faceSnapElementInArray" (newItemEvent)="logOutput($event)">
+<app-face-snap *ngFor="let faceSnapElementInArray of this.faceSnapService.getAllFaceSnaps()" [faceSnap]="faceSnapElementInArray" (newItemEvent)="logOutput($event)" (anotherNewItemEvent)="logChangesOutput($event)">
     <!-- {{faceSnapElementInArray.description}} - {{faceSnapElementInArray.snaps}} -->
 </app-face-snap>
 <ul>
     <li *ngFor="let item of reactions">{{item}}</li>
 </ul>
+
+
+<h2>Changelogs: </h2>
+<div *ngFor="let item of changelogs" class="card">
+    <p>Full Changelog</p>
+    <p>Nouveau texte : <i>{{item.valueText}}</i> anciennement <i>{{item.old_valueText}}</i></p>
+    <p>Nouveau nombre : <i>{{item.valueNumber}}</i> anciennement <i>{{item.old_valueNumber}}</i></p>
+    <p>Item qui change :
+        <span *ngIf="item.valueText!==item.old_valueText">Description</span>
+        <span *ngIf="item.valueNumber!==item.old_valueNumber">Nombre de vues</span>
+    </p>
+</div>

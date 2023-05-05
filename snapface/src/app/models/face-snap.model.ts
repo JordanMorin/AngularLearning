@@ -7,4 +7,6 @@ export class FaceSnap {
     public snaps!: number;
     public location?: string;
     public views: number = 0;
+    public old_description: string = "";
+    public old_views: number = 0;
 }

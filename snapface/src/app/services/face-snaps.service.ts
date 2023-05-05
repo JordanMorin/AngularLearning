@@ -17,6 +17,8 @@ export class FaceSnapService {
             snaps: 14,
             location: 'Toulouse',
             views: 17,
+            old_description: "",
+            old_views: 0,
         }, {
             id: 2,
             title: 'Three Rock Mountain',
@@ -25,6 +27,8 @@ export class FaceSnapService {
             createdDate: new Date(),
             snaps: 1,
             views: 1354,
+            old_description: "",
+            old_views: 0,
         }, {
             id: 3,
             title: 'Un bon repas',
@@ -34,6 +38,8 @@ export class FaceSnapService {
             snaps: 21,
             location: 'un endroit où je sais pas ou c\'est',
             views: 2,
+            old_description: "",
+            old_views: 0,
         }];
 
     //retourne la liste de nos faceSnaps

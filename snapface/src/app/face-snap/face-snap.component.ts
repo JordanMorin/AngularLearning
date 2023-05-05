@@ -12,7 +12,7 @@ export class FaceSnapComponent implements OnInit {
 
     @Input() public faceSnap!: FaceSnap;
     @Output() public newItemEvent = new EventEmitter<string>();
-    @Output() public anotherNewItemEvent = new EventEmitter<{}>();
+    @Output() public anotherNewItemEvent = new EventEmitter<{ valueText: string, valueNumber: number, old_valueText: string, old_valueNumber: number }>();
     public btnText!: string;
 
     constructor(private router: Router) { }
@@ -49,9 +49,16 @@ export class FaceSnapComponent implements OnInit {
 
     private createDynamiqueObject(): any {
         let myDynamicObject = {
-            valueInputText: this.faceSnap.description,
-            valueInputNumber: this.faceSnap.views,
+            valueText: this.faceSnap.description,
+            valueNumber: this.faceSnap.views.toString(),
+            old_valueText: this.faceSnap.old_description,
+            old_valueNumber: this.faceSnap.old_views,
         };
         return myDynamicObject;
+    }
+
+    public onUpdate_saveOldValue(): void {
+        this.faceSnap.old_description = this.faceSnap.description;
+        this.faceSnap.old_views = this.faceSnap.views;
     }
 }

@@ -26,9 +26,13 @@
         </div>
         <div>
             <!-- partie droite -->
-            <app-text-input [(modelValue)]="faceSnap.description">
+
+            <!-- les input output s'executent dans l'ordre de gauche a droite, donc (modelValueChange)="onUpdate_saveOldValue()" va detecter un changement et va sauvegarder les valeur de description & view dans leur version
+            old, ensuite [(modelValue)]="faceSnap.description" va mettre à jour, puis (modelValueChange)="onUpdate() va envoyer l'info au changelog de la liste -->
+
+            <app-text-input (modelValueChange)="onUpdate_saveOldValue()" [(modelValue)]="faceSnap.description" (modelValueChange)="onUpdate()">
             </app-text-input><br><br>
-            <app-number-input [(modelValue)]="faceSnap.views">
+            <app-number-input (modelValueChange)="onUpdate_saveOldValue()" [(modelValue)]="faceSnap.views" (modelValueChange)="onUpdate()">
             </app-number-input><br>
 
         </div>
