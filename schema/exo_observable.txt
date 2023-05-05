@@ -1,0 +1,13 @@
+Premièrement,
+• Le composant SnapFace doit, au moment d'une modification dans un de ces composant enfant (parmis input-text & input-number) :
+	- Créer un objet dynamique contenant la description (récupérer l'info directement via this.description ou via le composant input-text ?), et le nombre de vue (récupérer l'info directement via this.views ou via le composant input-number ?)
+	- Envoyer cet objet à son parent (SnapFace-list)
+
+Puis,
+• Le composant SnapFace-list doit afficher cet objet dynamique (on pourra afficher juste ses attributs)
+
+
+là en premier lieu, j'aimerais avoir l'info de "mon text ou mon nombre a changé" dans mon face-snap.component.ts
+
+
+Pour moi, il faut que j'abonne mon snap-face-component aux changements des enfants (text-input & number-input) pour créer l'objet dynamique à cet endroit, puis  l'envoyer à la liste via un output
