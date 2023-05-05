@@ -16,7 +16,7 @@
             <p><u>Nouveau nombre</u> : <i>{{item.valueNumber}}</i> anciennement <i>{{item.old_valueNumber}}</i></p>
             <p><u>Item qui change</u> :
                 <span *ngIf="item.valueText!==item.old_valueText">Description</span>
-                <span *ngIf="item.valueNumber!==item.old_valueNumber">Nombre de vues</span>
+                <span *ngIf="item.valueNumber.toString()!==item.old_valueNumber.toString()">Nombre de vues</span>
             </p>
         </div>
     </div>
