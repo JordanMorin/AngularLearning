@@ -7,12 +7,18 @@
 
 
 <h2>Changelogs: </h2>
-<div *ngFor="let item of changelogs" class="card">
-    <p>Full Changelog</p>
-    <p>Nouveau texte : <i>{{item.valueText}}</i> anciennement <i>{{item.old_valueText}}</i></p>
-    <p>Nouveau nombre : <i>{{item.valueNumber}}</i> anciennement <i>{{item.old_valueNumber}}</i></p>
-    <p>Item qui change :
-        <span *ngIf="item.valueText!==item.old_valueText">Description</span>
-        <span *ngIf="item.valueNumber!==item.old_valueNumber">Nombre de vues</span>
-    </p>
+<div *ngFor="let item of changelogs">
+    <div class="card">
+        <div class="container">
+
+            <p><u>Full Changelog</u></p>
+            <p><u>Nouveau texte</u> : <i>{{item.valueText}}</i> anciennement <i>{{item.old_valueText}}</i></p>
+            <p><u>Nouveau nombre</u> : <i>{{item.valueNumber}}</i> anciennement <i>{{item.old_valueNumber}}</i></p>
+            <p><u>Item qui change</u> :
+                <span *ngIf="item.valueText!==item.old_valueText">Description</span>
+                <span *ngIf="item.valueNumber!==item.old_valueNumber">Nombre de vues</span>
+            </p>
+        </div>
+    </div>
+    <br><br>
 </div>
