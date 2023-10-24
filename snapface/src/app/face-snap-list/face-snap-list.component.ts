@@ -13,11 +13,15 @@ export class FaceSnapListComponent {
     public lesSnaps: FaceSnap[] = this.faceSnapService.getAllFaceSnaps();
     public reactions: string[] = [];
     public changelogs: { valueText: string, valueNumber: number, old_valueText: string, old_valueNumber: number }[] = [];
-
+    public file: any;
     constructor(public faceSnapService: FaceSnapService) { }
 
     public getAllSnaps(): FaceSnap[] {
         return this.lesSnaps;
+    }
+
+    public addFaceSnapInList(unFaceSnap: FaceSnap): void {
+        this.lesSnaps.push(unFaceSnap);
     }
 
     public logOutput(info: string): void {
@@ -48,5 +52,32 @@ export class FaceSnapListComponent {
         const csvExporter = new ExportToCsv(options);
 
         csvExporter.generateCsv(this.lesSnaps);
+    }
+
+    public fileChanged(file: any): void {
+        this.file = file.target.files[0];
+    }
+
+    public uploadSave(): void {
+        this.lesSnaps = [];
+        let fileReader = new FileReader();
+        fileReader.onload = (e) => {
+            console.log(fileReader.result);
+            let lines = fileReader.result?.toString().split("\n");
+            console.log(lines);
+            lines?.forEach(function (value) {
+                let unFaceSnap: FaceSnap = new FaceSnap();
+                unFaceSnap.id = parseInt(value[0]);
+                unFaceSnap.title = value[1];
+                unFaceSnap.description = value[2];
+                unFaceSnap.imageUrl = value[3];
+                unFaceSnap.snaps = parseInt(value[5]);
+                if (value[6] != "undefined") {
+                    unFaceSnap.location = value[6];
+                }
+                unFaceSnap.views = parseInt(value[7]);
+            });
+        }
+        fileReader.readAsText(this.file);
     }
 }

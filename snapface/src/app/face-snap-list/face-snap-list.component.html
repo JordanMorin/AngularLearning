@@ -6,6 +6,11 @@
 <ul>
     <li *ngFor="let item of reactions">{{item}}</li>
 </ul>
+<div class="Block">
+    <label id="inputFile_lbl" for="inputFile"></label>
+    <input type='file' name="inputFile" id="inputFile" (change)="fileChanged($event)">
+    <button type="button" class="btn btn-primary" (click)="uploadSave()">Charger</button>
+</div>
 
 
 <h2>Changelogs: </h2>
